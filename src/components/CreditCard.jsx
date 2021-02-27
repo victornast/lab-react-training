@@ -11,10 +11,16 @@ const CreditCard = ({
   bgColor,
   color,
 }) => {
-  const ccNumber = number
-    .toString()
-    .match(/\d{1,4}/g)
-    .join(' ');
+  const ccNumber =
+    ('•'.repeat(4) + ' ').repeat(3) + number.toString().match(/\d{1,4}/g)[3];
+  let ccImage;
+  switch (type) {
+    case 'Visa':
+      ccImage = './img/visa.png';
+      break;
+    default:
+      ccImage = './img/master-card.svg';
+  }
   return (
     <div
       className="credit-card"
@@ -23,7 +29,7 @@ const CreditCard = ({
         color: color,
       }}
     >
-      <p>{type}</p>
+      <img className="credit-card__logo" src={ccImage} alt={type} />
       <p className="credit-card__number">{ccNumber}</p>
       <p>
         Expires {expirationMonth < 10 ? '0' + expirationMonth : expirationMonth}

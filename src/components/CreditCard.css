@@ -10,6 +10,11 @@
   margin: 0;
 }
 
+.credit-card__logo {
+  height: 1em;
+  float: right;
+}
+
 .credit-card__number.credit-card__number {
   margin: 0.75em;
   text-align: center;
