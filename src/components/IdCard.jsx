@@ -1,9 +1,10 @@
 import React from 'react';
 import './IdCard.css';
+import './utilities.css';
 
 const IdCard = ({ lastName, firstName, gender, height, birth, picture }) => {
   return (
-    <section className="id-card">
+    <section className="id-card card">
       <img src={picture} alt={firstName + ' ' + lastName} />
       <ul className="id-card__details">
         <li>

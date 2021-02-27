@@ -1,5 +1,6 @@
 import React from 'react';
 import './Greetings.css';
+import './utilities.css';
 
 const Greetings = (props) => {
   let greeting;
@@ -17,7 +18,7 @@ const Greetings = (props) => {
       greeting = 'Hello';
   }
   return (
-    <div className="greetings">
+    <div className="greetings card">
       <p className="greetings__heading">{greeting + ' ' + props.children}</p>
     </div>
   );

@@ -1,0 +1,26 @@
+.credit-card {
+  padding: 1em;
+  margin: 0.3em;
+  max-width: 21em;
+  font-weight: 600;
+  border-radius: 0.5em;
+}
+
+.credit-card p {
+  margin: 0;
+}
+
+.credit-card__number.credit-card__number {
+  margin: 0.75em;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.credit-card__bank {
+  margin-left: 2em;
+}
+
+.credit-card__owner {
+  margin: 0;
+}
