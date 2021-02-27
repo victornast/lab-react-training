@@ -1,17 +1,2 @@
 .App {
 }
-
-.id-card {
-  display: flex;
-  align-items: flex-start;
-  padding: 0.3em;
-  margin: 0.3em;
-  border: 1px solid black;
-}
-
-.id-card__details {
-  padding: 0;
-  margin: 0;
-  padding-left: 0.3em;
-  list-style: none;
-}
