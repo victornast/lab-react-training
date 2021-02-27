@@ -1,0 +1,14 @@
+.numbers-table {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.25em;
+}
+
+.numbers-table__field {
+  border: 1px solid black;
+  margin: 0;
+  width: 4rem;
+  padding: 1rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
