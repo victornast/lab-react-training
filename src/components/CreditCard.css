@@ -4,7 +4,8 @@
   max-width: 19em;
   font-weight: 600;
   border-radius: 0.5em;
-  display: flow-root;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .credit-card p {
@@ -13,7 +14,7 @@
 
 .credit-card__logo {
   height: 1em;
-  float: right;
+  align-self: flex-end;
 }
 
 .credit-card__number.credit-card__number {

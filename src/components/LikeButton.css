@@ -1,0 +1,17 @@
+.like-button {
+  display: inline-block;
+  margin: 0.25em;
+}
+
+.like-button__action {
+  padding: 0.5em;
+  min-width: 8rem;
+  font-size: 1.2rem;
+  border: 0;
+  color: white;
+  background-color: rebeccapurple;
+}
+
+.like-button__action:focus {
+  border: 0.25em solid blue;
+}
