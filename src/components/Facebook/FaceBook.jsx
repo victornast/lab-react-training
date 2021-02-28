@@ -5,8 +5,12 @@ import './FaceBook.css';
 
 class FaceBook extends React.Component {
   render() {
+    const countries = [...new Set(profiles.map((profile) => profile.country))];
     return (
       <div className="face-book">
+        {countries.map((country) => {
+          return <button key={country}>{country}</button>;
+        })}
         {profiles.map((profile) => {
           return (
             <div key={profile.lastName + profile.firstName}>
