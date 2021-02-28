@@ -12,10 +12,12 @@ import ClickablePicture from './components/ClickablePicture';
 import Dice from './components/Dice';
 import Carousel from './components/Carousel';
 import NumbersTable from './components/NumbersTable';
+import FaceBook from './components/Facebook/FaceBook';
 
 function App() {
   return (
     <div className="App">
+      <FaceBook />
       <IdCard
         lastName="Doe"
         firstName="John"
