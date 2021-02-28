@@ -15,6 +15,7 @@ class NumbersTable extends React.Component {
           let bgColor = number % 2 === 0 ? 'red' : 'white';
           return (
             <p
+              key={number}
               style={{ backgroundColor: bgColor }}
               className="numbers-table__field"
             >

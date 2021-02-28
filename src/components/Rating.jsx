@@ -1,11 +1,11 @@
 import React from 'react';
-import './CreditCard.css';
+import './Rating.css';
 
 const Rating = (props) => {
   return (
-    <div className="rating">
-      <p>{'★'.repeat(Math.round(props.children)).padEnd(5, '☆')}</p>
-    </div>
+    <span className="rating">
+      {'★'.repeat(Math.round(props.children)).padEnd(5, '☆')}
+    </span>
   );
 };
 

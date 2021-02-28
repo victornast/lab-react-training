@@ -26,7 +26,14 @@ class LikeButton extends React.Component {
           }}
           onClick={this.incrementCount}
         >
-          {this.state.count} Like{this.state.count === 1 || 's'}
+          <span
+            className="like-button__text"
+            style={{
+              color: this.bgColor[this.state.count % this.bgColor.length],
+            }}
+          >
+            {this.state.count} Like{this.state.count === 1 || 's'}
+          </span>
         </button>
       </div>
     );

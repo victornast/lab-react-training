@@ -8,10 +8,12 @@
   min-width: 8rem;
   font-size: 1.2rem;
   border: 0;
-  color: white;
   background-color: rebeccapurple;
 }
 
 .like-button__action:focus {
-  border: 0.25em solid blue;
+  outline: 0.25em solid blue;
+}
+.like-button__text {
+  filter: grayscale() contrast(10) invert();
 }
