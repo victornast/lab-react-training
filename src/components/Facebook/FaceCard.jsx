@@ -2,9 +2,21 @@ import React from 'react';
 import './FaceCard.css';
 import '../utilities.css';
 
-const FaceCard = ({ lastName, firstName, img, country, isStudent }) => {
+const FaceCard = ({
+  lastName,
+  firstName,
+  img,
+  country,
+  isStudent,
+  selectedCountry,
+}) => {
   return (
-    <section className="face-card card">
+    <section
+      className={
+        'face-card card' +
+        (country === selectedCountry ? ' country-selected' : '')
+      }
+    >
       <img
         className="face-card__picture"
         src={img}
