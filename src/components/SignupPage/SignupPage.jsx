@@ -23,6 +23,17 @@ class SignupPage extends React.Component {
   };
 
   render() {
+    let greeting;
+    switch (this.state.nationality) {
+      case 'de':
+        greeting = 'Hallo!';
+        break;
+      case 'fr':
+        greeting = 'Bonjour!';
+        break;
+      default:
+        greeting = 'Hey!';
+    }
     return (
       <section className="signup-page">
         <h2>Signup Page</h2>
@@ -62,8 +73,8 @@ class SignupPage extends React.Component {
           <button>Sign Up</button>
         </form>
 
-        <p>Hallo</p>
-        <p>Your email adress is: max@i</p>
+        <p>{greeting}</p>
+        <p>Your email adress is: {this.state.email}</p>
         <p>Your email adress is correct</p>
       </section>
     );
