@@ -14,10 +14,12 @@ import Carousel from './components/Carousel';
 import NumbersTable from './components/NumbersTable';
 import FaceBook from './components/Facebook/FaceBook';
 import SignupPage from './components/SignupPage/SignupPage';
+import RGBColorPicker from './components/ColorPicker/RGBColorPicker';
 
 function App() {
   return (
     <div className="App">
+      <RGBColorPicker />
       <SignupPage />
       <FaceBook />
       <IdCard
