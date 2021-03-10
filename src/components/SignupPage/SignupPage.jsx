@@ -58,13 +58,11 @@ class SignupPage extends React.Component {
           />
           {Boolean(this.state.email)
             ? (emailIsValid && (
-                <small className="signup-page--valid">
-                  You typed a valid email
-                </small>
+                <p className="signup-page--valid">You typed a valid email</p>
               )) || (
-                <small className="signup-page--invalid">
+                <p className="signup-page--invalid">
                   You typed an invalid email
-                </small>
+                </p>
               )
             : ''}
           <label className="signup-page__label" htmlFor="signup-password">
@@ -82,20 +80,16 @@ class SignupPage extends React.Component {
           />
           {Boolean(this.state.password) ? (
             (passwordIsValid && (
-              <small className="signup-page--valid">
-                Your password is strong
-              </small>
+              <p className="signup-page--valid">Your password is strong</p>
             )) || (
-              <small className="signup-page--invalid">
-                Your password is too weak
-              </small>
+              <p className="signup-page--invalid">Your password is too weak</p>
             )
           ) : (
-            <small>
+            <p>
               Passwords must be at least 8 characters long and contain at least
               one of each: a number, a lowercase character and an uppercase
               character.
-            </small>
+            </p>
           )}
           <label className="signup-page__label" htmlFor="signup-nationality">
             Nationality
