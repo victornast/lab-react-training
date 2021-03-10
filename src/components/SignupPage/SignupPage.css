@@ -1,0 +1,52 @@
+.signup-page {
+  margin: 0.25em;
+}
+
+.signup-page__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-page__label {
+  font-size: 1.2rem;
+  margin: 0.8em 0 0.4em;
+}
+
+.signup-page__input {
+  font-size: 1.2rem;
+  padding: 0.4em;
+  border-radius: 0.3em;
+  border: 1px solid;
+  margin: 0.4em 0;
+}
+
+.signup-page__action {
+  color: white;
+  background-color: cornflowerblue;
+  font-size: 1.2rem;
+  padding: 0.6em;
+  border-radius: 0.3em;
+  border: 0;
+  margin: 0.4em 0;
+  align-self: baseline;
+}
+
+.signup-page--valid {
+  color: green;
+}
+
+input:not(:focus):not(:placeholder-shown):valid {
+  border: 2px solid green;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' fill='green'/%3E%3C/svg%3E")
+    no-repeat 98% center;
+}
+
+.signup-page--invalid {
+  color: red;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  border: 2px solid red;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z' fill='red'/%3E%3C/svg%3E")
+    no-repeat 98% center;
+}

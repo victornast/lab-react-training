@@ -12,7 +12,6 @@ class SignupPage extends React.Component {
 
   handleFormChanges = (event) => {
     const { name, value } = event.target;
-    console.log(name, value);
     this.setState({ [name]: value });
   };
 
@@ -23,6 +22,12 @@ class SignupPage extends React.Component {
   };
 
   render() {
+    //^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})
+    const passwordIsValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(
+      this.state.password
+    );
+    const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.state.email);
+
     let greeting;
     switch (this.state.nationality) {
       case 'de':
@@ -34,12 +39,14 @@ class SignupPage extends React.Component {
       default:
         greeting = 'Hey!';
     }
+
     return (
       <section className="signup-page">
         <h2>Signup Page</h2>
-
-        <form onSubmit={this.handleSubmission}>
-          <label htmlFor="signup-email">Email</label>
+        <form className="signup-page__form" onSubmit={this.handleSubmission}>
+          <label className="signup-page__label" htmlFor="signup-email">
+            Email
+          </label>
           <input
             type="email"
             name="email"
@@ -47,35 +54,73 @@ class SignupPage extends React.Component {
             placeholder="Email"
             value={this.state.email}
             onChange={this.handleFormChanges}
+            className="signup-page__input"
           />
-          <p>You typed a valid email</p>
-          <label htmlFor="signup-password">Password</label>
+          {Boolean(this.state.email)
+            ? (emailIsValid && (
+                <small className="signup-page--valid">
+                  You typed a valid email
+                </small>
+              )) || (
+                <small className="signup-page--invalid">
+                  You typed an invalid email
+                </small>
+              )
+            : ''}
+          <label className="signup-page__label" htmlFor="signup-password">
+            Password
+          </label>
           <input
             type="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             name="password"
             id="signup-password"
             placeholder="Password"
             value={this.state.password}
             onChange={this.handleFormChanges}
+            className="signup-page__input"
           />
-          <p>Your password is too weak</p>
-          <label htmlFor="signup-nationality">Nationality</label>
+          {Boolean(this.state.password) ? (
+            (passwordIsValid && (
+              <small className="signup-page--valid">
+                Your password is strong
+              </small>
+            )) || (
+              <small className="signup-page--invalid">
+                Your password is too weak
+              </small>
+            )
+          ) : (
+            <small>
+              Passwords must be at least 8 characters long and contain at least
+              one of each: a number, a lowercase character and an uppercase
+              character.
+            </small>
+          )}
+          <label className="signup-page__label" htmlFor="signup-nationality">
+            Nationality
+          </label>
           <select
             name="nationality"
             id="signup-nationality"
             onChange={this.handleFormChanges}
             value={this.state.nationality}
+            className="signup-page__input"
           >
             <option value="de">German</option>
             <option value="en">English</option>
             <option value="fr">French</option>
           </select>
-          <button>Sign Up</button>
+          <button className="signup-page__action">Sign Up</button>
         </form>
-
+        <hr />
         <p>{greeting}</p>
         <p>Your email adress is: {this.state.email}</p>
-        <p>Your email adress is correct</p>
+        {Boolean(this.state.email)
+          ? (emailIsValid && <p>Your email adress is valid</p>) || (
+              <p>Your email adress is invalid</p>
+            )
+          : ''}
       </section>
     );
   }
